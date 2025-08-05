@@ -47,7 +47,7 @@
             font-weight: 700;
             color: #1f2937; /* A darker gray for the label */
         }
-        .countdown-title, .tip-title {
+        .countdown-title, .tip-title, .weather-title {
             font-family: 'Poppins', sans-serif;
         }
         .map-link {
@@ -117,6 +117,31 @@
                 <p id="goa-tip" class="text-sm mt-2 font-medium"></p>
             </div>
 
+            <!-- New Goa Weather Forecast Section -->
+            <div class="bg-teal-50 border-l-4 border-teal-500 text-teal-800 p-4 rounded-xl shadow-md mb-8">
+                <h3 class="text-xl font-bold weather-title flex items-center gap-2">
+                    <span class="text-2xl">&#x26C5;</span> Goa Weather Forecast
+                </h3>
+                <div class="mt-4 flex justify-between text-center text-sm font-bold">
+                    <div>
+                        <p>Sat, Sep 13</p>
+                        <p class="text-2xl mt-1">&#x1F327;&#xFE0F;</p>
+                        <p class="text-xs font-normal mt-1">Occasional Showers</p>
+                    </div>
+                    <div>
+                        <p>Sun, Sep 14</p>
+                        <p class="text-2xl mt-1">&#x2601;&#xFE0F;</p>
+                        <p class="text-xs font-normal mt-1">Partly Cloudy</p>
+                    </div>
+                    <div>
+                        <p>Mon, Sep 15</p>
+                        <p class="text-2xl mt-1">&#x1F326;&#xFE0F;</p>
+                        <p class="text-xs font-normal mt-1">Light Rain</p>
+                    </div>
+                </div>
+                <p class="text-xs font-normal mt-4 italic text-teal-700">Forecast data is a general estimate. Check a real-time weather app closer to your trip date for accuracy.</p>
+            </div>
+
             <!-- Important Note Card with a tropical green accent -->
             <div class="bg-green-50 border-l-4 border-green-500 text-green-800 p-4 rounded-xl shadow-md mb-8">
                 <p class="font-bold text-lg">Heads Up!</p>
@@ -133,6 +158,9 @@
                 </button>
                 <button role="tab" class="tab-button flex-1 py-4 px-2 text-center text-gray-600 hover:bg-orange-100 rounded-t-xl focus:outline-none" onclick="openTab(event, 'day3')">
                     Day 3 <span class="hidden sm:inline">| Mon 15</span>
+                </button>
+                <button role="tab" class="tab-button flex-1 py-4 px-2 text-center text-gray-600 hover:bg-orange-100 rounded-t-xl focus:outline-none" onclick="openTab(event, 'drinks-casinos')">
+                    Drinks & Casinos
                 </button>
             </div>
 
@@ -157,14 +185,14 @@
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F37D;</span> Afternoon</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
-                                    <li><span class="itinerary-label">&#x1F35B; Lunch:</span> Enjoy authentic Goan food at <a href="https://maps.app.goo.gl/uXpLg2hRk6YyS4yA7" target="_blank" class="map-link">Feni Restaurant and Bar</a>.</li>
-                                    <li><span class="itinerary-label">&#x1F3D6;&#xFE0F; Relax:</span> Unwind at the peaceful <a href="https://maps.app.goo.gl/vXJz4eR9r2pA4zH7A" target="_blank" class="map-link">Candolim Beach</a>.</li>
+                                    <li><span class="itinerary-label">&#x1F35B; Lunch:</span> Enjoy authentic Goan food at <span class="font-semibold">Feni Restaurant and Bar</span>.</li>
+                                    <li><span class="itinerary-label">&#x1F3D6;&#xFE0F; Relax:</span> Unwind at the peaceful <span class="font-semibold">Candolim Beach</span>.</li>
                                 </ul>
                             </div>
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F306;</span> Evening</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
-                                    <li><span class="itinerary-label">&#x1F379; Dinner & Drinks:</span> Experience beachside vibes at <a href="https://maps.app.goo.gl/6K7p3vRkF9W4f3R28" target="_blank" class="map-link">L'Amore Cafe & Restaurant</a>.</li>
+                                    <li><span class="itinerary-label">&#x1F379; Dinner & Drinks:</span> Experience beachside vibes at <span class="font-semibold">L'Amore Cafe & Restaurant</span>.</li>
                                 </ul>
                             </div>
                         </div>
@@ -184,20 +212,20 @@
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F3D5;</span> Morning</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
                                     <li><span class="itinerary-label">&#x1F697; Travel:</span> Hire a tempo traveller or two SUVs for the day.</li>
-                                    <li><span class="itinerary-label">&#x1F3F0; Visit:</span> Explore the historic <a href="https://maps.app.goo.gl/PzYt97hRk7Y5w4Z99" target="_blank" class="map-link">Fort Aguada</a> for stunning sea views.</li>
+                                    <li><span class="itinerary-label">&#x1F3F0; Visit:</span> Explore the historic <span class="font-semibold">Fort Aguada</span> for stunning sea views.</li>
                                 </ul>
                             </div>
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F3AE;</span> Afternoon</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
-                                    <li><span class="itinerary-label">&#x1F9C8; Lunch:</span> Head to Vagator for lunch at the popular <a href="https://maps.app.goo.gl/s1t8L9tH1sW3q5j1A" target="_blank" class="map-link">Thalassa</a> (reservations are highly recommended).</li>
+                                    <li><span class="itinerary-label">&#x1F9C8; Lunch:</span> Head to Vagator for lunch at the popular <span class="font-semibold">Thalassa</span> (reservations are highly recommended).</li>
                                     <li><span class="itinerary-label">&#x1F6CD;&#xFE0F; Shopping:</span> As markets are closed, explore local boutiques in the Candolim-Calangute area.</li>
                                 </ul>
                             </div>
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F307;</span> Evening</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
-                                    <li><span class="itinerary-label">&#x1F305; Sunset:</span> Watch the sunset from the iconic <a href="https://maps.app.goo.gl/R7V3o9hRk6YyS4yA7" target="_blank" class="map-link">Chapora Fort</a>.</li>
+                                    <li><span class="itinerary-label">&#x1F305; Sunset:</span> Watch the sunset from the iconic <span class="font-semibold">Chapora Fort</span>.</li>
                                     <li><span class="itinerary-label">&#x1F374; Dinner:</span> Enjoy dinner at one of the vibrant restaurants in Vagator or Anjuna.</li>
                                 </ul>
                             </div>
@@ -218,14 +246,50 @@
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x26F1;</span> Morning</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
                                     <li><span class="itinerary-label">&#x1F3CA; Relax:</span> Spend your final hours by the pool or on Candolim Beach.</li>
-                                    <li><span class="itinerary-label">&#x1F54C; Optional:</span> Visit the churches in <a href="https://maps.app.goo.gl/g6z6k4y325vQ8f3A6" target="_blank" class="map-link">Old Goa</a> for a cultural experience.</li>
+                                    <li><span class="itinerary-label">&#x1F54C; Optional:</span> Visit the churches in <span class="font-semibold">Old Goa</span> for a cultural experience.</li>
                                 </ul>
                             </div>
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F3C4;</span> Lunch & Departure</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
-                                    <li><span class="itinerary-label">&#x1F372; Lunch:</span> Have a final meal at <a href="https://maps.app.goo.gl/a8S8F6G3z8B7z6J3B" target="_blank" class="map-link">Infantaria Cafe</a> in Calangute.</li>
+                                    <li><span class="itinerary-label">&#x1F372; Lunch:</span> Have a final meal at <span class="font-semibold">Infantaria Cafe</span> in Calangute.</li>
                                     <li><span class="itinerary-label">&#x1F697; Airport Transfer:</span> Depart for Manohar International Airport (GOX) for your flights home.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Drinks & Casinos Tab Content -->
+                <div id="drinks-casinos" class="tab-content space-y-6">
+                    <section>
+                        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+                            <span class="text-orange-500">&#x1F379;</span> Drinks & Casinos
+                        </h2>
+                        <p class="text-gray-500 mt-1 italic">Nightlife and Entertainment</p>
+                        
+                        <div class="mt-4 space-y-4">
+                            <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
+                                <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F378;</span> Local Drinks</h3>
+                                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                                    <li><span class="itinerary-label">Feni:</span> A spirit distilled from either cashews or coconut. A must-try local specialty.</li>
+                                    <li><span class="itinerary-label">Urak:</span> A milder, single-distilled version of cashew feni, popular during the monsoon.</li>
+                                    <li><span class="itinerary-label">Kingfisher Beer:</span> The official beer of Goa, available everywhere.</li>
+                                </ul>
+                            </div>
+                            <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
+                                <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F3A4;</span> Popular Pubs & Nightlife</h3>
+                                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                                    <li><span class="itinerary-label">L'Amore Cafe:</span> A great spot for a relaxed evening with drinks and dinner on Candolim Beach Road.</li>
+                                    <li><span class="itinerary-label">Sinq Night Club:</span> A popular nightclub in Candolim for those looking to party.</li>
+                                    <li><span class="itinerary-label">Shack Hopping:</span> Experience the vibrant beach shack culture along Candolim and Calangute beaches.</li>
+                                </ul>
+                            </div>
+                            <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
+                                <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F3B0;</span> Casinos</h3>
+                                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                                    <li><span class="itinerary-label">Deltin Royale:</span> Goa's most famous offshore casino, located in Panjim (a short drive from Candolim). Offers a premium gaming experience.</li>
+                                    <li><span class="itinerary-label">Casino Pride:</span> Another popular offshore casino option with a wide range of games and entertainment.</li>
                                 </ul>
                             </div>
                         </div>
