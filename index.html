@@ -9,12 +9,12 @@
     <!-- Google Fonts for a clean typeface -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             /* A warm, sandy beach gradient background */
-            background: linear-gradient(to bottom, #fffbeb, #dcfce7);
+            background: linear-gradient(to bottom, #fefce8, #dcfce7);
         }
         .container {
             max-width: 800px;
@@ -36,13 +36,24 @@
             display: block;
         }
         /* Card hover effect */
+        .itinerary-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
         .itinerary-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.04);
         }
         .itinerary-label {
             font-weight: 700;
             color: #1f2937; /* A darker gray for the label */
+        }
+        .countdown-title, .tip-title {
+            font-family: 'Poppins', sans-serif;
+        }
+        .map-link {
+            color: #d97706; /* Match the accent color */
+            font-weight: 600;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -50,16 +61,62 @@
     <div class="container mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden">
         
         <!-- Header Section with a vibrant sunset gradient -->
-        <header class="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-8 text-center rounded-b-3xl shadow-lg">
+        <header class="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-8 text-center rounded-t-3xl">
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight drop-shadow-md">
                 &#x1F3D6; Pegasus Team Goa Getaway &#x1F334;
             </h1>
             <p class="mt-2 text-lg sm:text-xl font-light">Trip for Pegasus Team | September 13th - 15th, 2025</p>
             <p class="mt-1 text-sm font-light italic">Whispering Palms Beach Resort, Candolim</p>
+            <!-- Google Maps link added here -->
+            <a href="https://share.google/HHHxqtqu3QsyYCGy0" target="_blank" class="mt-4 inline-block px-4 py-2 bg-white text-orange-500 font-semibold rounded-full shadow-md hover:bg-gray-100 transition-colors duration-200">
+                View Hotel on Google Maps
+            </a>
         </header>
+
+        <!-- Image of the resort with a new visual treatment -->
+        <div class="relative w-full mt-4 px-6 sm:px-10 z-10">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/78/0d/51/poolside.jpg?w=800&h=500&s=1" 
+                 alt="A scenic view of the poolside at Whispering Palms Beach Resort in Goa." 
+                 class="w-full h-auto object-cover rounded-2xl shadow-lg" 
+                 onerror="this.onerror=null;this.src='https://placehold.co/800x500/A08A72/FFFFFF?text=Whispering+Palms+Resort+Poolside'">
+        </div>
 
         <!-- Main Content Section -->
         <main class="p-6 sm:p-10">
+            <!-- Countdown Timer -->
+            <div id="countdown" class="bg-blue-50 text-center p-4 rounded-xl shadow-md mb-8">
+                <h3 class="text-xl font-bold text-blue-800 countdown-title">Goa in...</h3>
+                <div class="flex justify-center items-center mt-2 space-x-4 text-blue-600 font-bold text-2xl sm:text-3xl">
+                    <div class="flex flex-col items-center">
+                        <span id="days">00</span>
+                        <span class="text-sm font-normal text-blue-500">Days</span>
+                    </div>
+                    <span class="text-blue-500">:</span>
+                    <div class="flex flex-col items-center">
+                        <span id="hours">00</span>
+                        <span class="text-sm font-normal text-blue-500">Hours</span>
+                    </div>
+                    <span class="text-blue-500">:</span>
+                    <div class="flex flex-col items-center">
+                        <span id="minutes">00</span>
+                        <span class="text-sm font-normal text-blue-500">Minutes</span>
+                    </div>
+                    <span class="text-blue-500">:</span>
+                    <div class="flex flex-col items-center">
+                        <span id="seconds">00</span>
+                        <span class="text-sm font-normal text-blue-500">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Goa Tip of the Day Section -->
+            <div class="bg-orange-50 border-l-4 border-orange-400 text-orange-800 p-4 rounded-xl shadow-md mb-8">
+                <h3 class="text-xl font-bold tip-title flex items-center gap-2">
+                    <span class="text-2xl">&#x1F307;</span> Goa Tip of the Day
+                </h3>
+                <p id="goa-tip" class="text-sm mt-2 font-medium"></p>
+            </div>
+
             <!-- Important Note Card with a tropical green accent -->
             <div class="bg-green-50 border-l-4 border-green-500 text-green-800 p-4 rounded-xl shadow-md mb-8">
                 <p class="font-bold text-lg">Heads Up!</p>
@@ -69,13 +126,13 @@
             <!-- Tab Buttons with a sandy-colored background -->
             <div role="tablist" class="flex justify-center border-b-2 border-gray-200 bg-orange-50 rounded-t-xl">
                 <button role="tab" class="tab-button active flex-1 py-4 px-2 text-center text-gray-600 hover:bg-orange-100 rounded-t-xl focus:outline-none" onclick="openTab(event, 'day1')">
-                    Day 1 <span class="hidden sm:inline">| Sept 13</span>
+                    Day 1 <span class="hidden sm:inline">| Sat 13</span>
                 </button>
                 <button role="tab" class="tab-button flex-1 py-4 px-2 text-center text-gray-600 hover:bg-orange-100 rounded-t-xl focus:outline-none" onclick="openTab(event, 'day2')">
-                    Day 2 <span class="hidden sm:inline">| Sept 14</span>
+                    Day 2 <span class="hidden sm:inline">| Sun 14</span>
                 </button>
                 <button role="tab" class="tab-button flex-1 py-4 px-2 text-center text-gray-600 hover:bg-orange-100 rounded-t-xl focus:outline-none" onclick="openTab(event, 'day3')">
-                    Day 3 <span class="hidden sm:inline">| Sept 15</span>
+                    Day 3 <span class="hidden sm:inline">| Mon 15</span>
                 </button>
             </div>
 
@@ -87,7 +144,7 @@
                         <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
                             <span class="text-orange-500">&#x1F6EB;</span> Day 1: Arrival & Candolim Exploration
                         </h2>
-                        <p class="text-gray-500 mt-1 italic">Saturday, 13th September 2025</p>
+                        <p class="text-gray-500 mt-1 italic">Saturday, 13th September</p>
                         
                         <div class="mt-4 space-y-4">
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
@@ -100,14 +157,14 @@
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F37D;</span> Afternoon</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
-                                    <li><span class="itinerary-label">&#x1F35B; Lunch:</span> Enjoy authentic Goan food at **Feni Restaurant and Bar**.</li>
-                                    <li><span class="itinerary-label">&#x1F3D6;&#xFE0F; Relax:</span> Unwind at the peaceful Candolim Beach.</li>
+                                    <li><span class="itinerary-label">&#x1F35B; Lunch:</span> Enjoy authentic Goan food at <a href="https://maps.app.goo.gl/uXpLg2hRk6YyS4yA7" target="_blank" class="map-link">Feni Restaurant and Bar</a>.</li>
+                                    <li><span class="itinerary-label">&#x1F3D6;&#xFE0F; Relax:</span> Unwind at the peaceful <a href="https://maps.app.goo.gl/vXJz4eR9r2pA4zH7A" target="_blank" class="map-link">Candolim Beach</a>.</li>
                                 </ul>
                             </div>
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F306;</span> Evening</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
-                                    <li><span class="itinerary-label">&#x1F379; Dinner & Drinks:</span> Experience beachside vibes at **L'Amore Cafe & Restaurant**.</li>
+                                    <li><span class="itinerary-label">&#x1F379; Dinner & Drinks:</span> Experience beachside vibes at <a href="https://maps.app.goo.gl/6K7p3vRkF9W4f3R28" target="_blank" class="map-link">L'Amore Cafe & Restaurant</a>.</li>
                                 </ul>
                             </div>
                         </div>
@@ -120,27 +177,27 @@
                         <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
                             <span class="text-orange-500">&#x1F697;</span> Day 2: North Goa Adventures
                         </h2>
-                        <p class="text-gray-500 mt-1 italic">Sunday, 14th September 2025</p>
+                        <p class="text-gray-500 mt-1 italic">Sunday, 14th September</p>
                         
                         <div class="mt-4 space-y-4">
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F3D5;</span> Morning</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
                                     <li><span class="itinerary-label">&#x1F697; Travel:</span> Hire a tempo traveller or two SUVs for the day.</li>
-                                    <li><span class="itinerary-label">&#x1F3F0; Visit:</span> Explore the historic **Fort Aguada** for stunning sea views.</li>
+                                    <li><span class="itinerary-label">&#x1F3F0; Visit:</span> Explore the historic <a href="https://maps.app.goo.gl/PzYt97hRk7Y5w4Z99" target="_blank" class="map-link">Fort Aguada</a> for stunning sea views.</li>
                                 </ul>
                             </div>
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F3AE;</span> Afternoon</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
-                                    <li><span class="itinerary-label">&#x1F9C8; Lunch:</span> Head to Vagator for lunch at the popular **Thalassa** (reservations are highly recommended).</li>
+                                    <li><span class="itinerary-label">&#x1F9C8; Lunch:</span> Head to Vagator for lunch at the popular <a href="https://maps.app.goo.gl/s1t8L9tH1sW3q5j1A" target="_blank" class="map-link">Thalassa</a> (reservations are highly recommended).</li>
                                     <li><span class="itinerary-label">&#x1F6CD;&#xFE0F; Shopping:</span> As markets are closed, explore local boutiques in the Candolim-Calangute area.</li>
                                 </ul>
                             </div>
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F307;</span> Evening</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
-                                    <li><span class="itinerary-label">&#x1F305; Sunset:</span> Watch the sunset from the iconic **Chapora Fort**.</li>
+                                    <li><span class="itinerary-label">&#x1F305; Sunset:</span> Watch the sunset from the iconic <a href="https://maps.app.goo.gl/R7V3o9hRk6YyS4yA7" target="_blank" class="map-link">Chapora Fort</a>.</li>
                                     <li><span class="itinerary-label">&#x1F374; Dinner:</span> Enjoy dinner at one of the vibrant restaurants in Vagator or Anjuna.</li>
                                 </ul>
                             </div>
@@ -154,20 +211,20 @@
                         <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
                             <span class="text-orange-500">&#x1F305;</span> Day 3: Leisure & Departure
                         </h2>
-                        <p class="text-gray-500 mt-1 italic">Monday, 15th September 2025</p>
+                        <p class="text-gray-500 mt-1 italic">Monday, 15th September</p>
                         
                         <div class="mt-4 space-y-4">
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x26F1;</span> Morning</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
                                     <li><span class="itinerary-label">&#x1F3CA; Relax:</span> Spend your final hours by the pool or on Candolim Beach.</li>
-                                    <li><span class="itinerary-label">&#x1F54C; Optional:</span> Visit the churches in Old Goa for a cultural experience.</li>
+                                    <li><span class="itinerary-label">&#x1F54C; Optional:</span> Visit the churches in <a href="https://maps.app.goo.gl/g6z6k4y325vQ8f3A6" target="_blank" class="map-link">Old Goa</a> for a cultural experience.</li>
                                 </ul>
                             </div>
                             <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
                                 <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F3C4;</span> Lunch & Departure</h3>
                                 <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
-                                    <li><span class="itinerary-label">&#x1F372; Lunch:</span> Have a final meal at **Infantaria Cafe** in Calangute.</li>
+                                    <li><span class="itinerary-label">&#x1F372; Lunch:</span> Have a final meal at <a href="https://maps.app.goo.gl/a8S8F6G3z8B7z6J3B" target="_blank" class="map-link">Infantaria Cafe</a> in Calangute.</li>
                                     <li><span class="itinerary-label">&#x1F697; Airport Transfer:</span> Depart for Manohar International Airport (GOX) for your flights home.</li>
                                 </ul>
                             </div>
@@ -216,6 +273,41 @@
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
         }
+
+        // Countdown Timer Logic
+        const tripDate = new Date("September 13, 2025 07:35:00").getTime();
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = tripDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Update the HTML elements
+            document.getElementById("days").innerHTML = String(days).padStart(2, '0');
+            document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
+
+            // If the countdown is finished, write some text
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = `<h3 class="text-xl font-bold text-blue-800">The trip has started! Enjoy Goa!</h3>`;
+            }
+        }, 1000);
+
+        // Goa Tip of the Day Logic
+        const goaTips = [
+            "Don't forget to try the local delicacy, 'Fish Curry Rice' (Xitt-Koddi).",
+            "The best way to explore North Goa is by renting a scooter or a car.",
+            "Always bargain when shopping at local markets, it's part of the experience!",
+            "Take some time to explore the beautiful Portuguese churches in Old Goa.",
+            "September is great for lush green views and fewer crowds. Enjoy the serenity!",
+            "Stay hydrated and don't forget to apply sunscreen, even on cloudy days."
+        ];
+        document.getElementById("goa-tip").innerHTML = goaTips[Math.floor(Math.random() * goaTips.length)];
     </script>
 </body>
 </html>
