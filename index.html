@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goa Getaway Itinerary - September 2025</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean typeface -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* A warm, sandy beach gradient background */
+            background: linear-gradient(to bottom, #fffbeb, #dcfce7);
+        }
+        .container {
+            max-width: 800px;
+        }
+        /* Custom styles for the tabs */
+        .tab-button {
+            transition: all 0.2s ease-in-out;
+            font-weight: 600;
+        }
+        .tab-button.active {
+            background-color: #ffffff;
+            color: #d97706; /* A deep orange for the active tab */
+            border-bottom: 3px solid #d97706;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        /* Card hover effect */
+        .itinerary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .itinerary-label {
+            font-weight: 700;
+            color: #1f2937; /* A darker gray for the label */
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8">
+    <div class="container mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden">
+        
+        <!-- Header Section with a vibrant sunset gradient -->
+        <header class="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-8 text-center rounded-b-3xl shadow-lg">
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight drop-shadow-md">
+                &#x1F3D6; Pegasus Team Goa Getaway &#x1F334;
+            </h1>
+            <p class="mt-2 text-lg sm:text-xl font-light">Trip for Pegasus Team | September 13th - 15th, 2025</p>
+            <p class="mt-1 text-sm font-light italic">Whispering Palms Beach Resort, Candolim</p>
+        </header>
+
+        <!-- Main Content Section -->
+        <main class="p-6 sm:p-10">
+            <!-- Important Note Card with a tropical green accent -->
+            <div class="bg-green-50 border-l-4 border-green-500 text-green-800 p-4 rounded-xl shadow-md mb-8">
+                <p class="font-bold text-lg">Heads Up!</p>
+                <p class="text-sm mt-1">September marks the end of the monsoon season. Expect lush green views and fewer crowds, but keep an eye out for occasional rain. Seasonal markets like Anjuna and Arpora will be closed during this time.</p>
+            </div>
+
+            <!-- Tab Buttons with a sandy-colored background -->
+            <div role="tablist" class="flex justify-center border-b-2 border-gray-200 bg-orange-50 rounded-t-xl">
+                <button role="tab" class="tab-button active flex-1 py-4 px-2 text-center text-gray-600 hover:bg-orange-100 rounded-t-xl focus:outline-none" onclick="openTab(event, 'day1')">
+                    Day 1 <span class="hidden sm:inline">| Sept 13</span>
+                </button>
+                <button role="tab" class="tab-button flex-1 py-4 px-2 text-center text-gray-600 hover:bg-orange-100 rounded-t-xl focus:outline-none" onclick="openTab(event, 'day2')">
+                    Day 2 <span class="hidden sm:inline">| Sept 14</span>
+                </button>
+                <button role="tab" class="tab-button flex-1 py-4 px-2 text-center text-gray-600 hover:bg-orange-100 rounded-t-xl focus:outline-none" onclick="openTab(event, 'day3')">
+                    Day 3 <span class="hidden sm:inline">| Sept 15</span>
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="tab-container" class="mt-6">
+                <!-- Day 1 Itinerary Content -->
+                <div id="day1" class="tab-content active space-y-6">
+                    <section>
+                        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+                            <span class="text-orange-500">&#x1F6EB;</span> Day 1: Arrival & Candolim Exploration
+                        </h2>
+                        <p class="text-gray-500 mt-1 italic">Friday, 13th September</p>
+                        
+                        <div class="mt-4 space-y-4">
+                            <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
+                                <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x23F0;</span> Morning</h3>
+                                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                                    <li><span class="itinerary-label">&#x2708;&#xFE0F; Flight:</span> Indigo flight from HYD at 07:35 AM, arriving at GOX at 08:50 AM.</li>
+                                    <li><span class="itinerary-label">&#x1F695; Transfer:</span> Pre-book a tempo traveller or two taxis for the 1.5-hour drive to the resort.</li>
+                                </ul>
+                            </div>
+                            <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
+                                <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F37D;</span> Afternoon</h3>
+                                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                                    <li><span class="itinerary-label">&#x1F35B; Lunch:</span> Enjoy authentic Goan food at **Feni Restaurant and Bar**.</li>
+                                    <li><span class="itinerary-label">&#x1F3D6;&#xFE0F; Relax:</span> Unwind at the peaceful Candolim Beach.</li>
+                                </ul>
+                            </div>
+                            <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
+                                <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F306;</span> Evening</h3>
+                                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                                    <li><span class="itinerary-label">&#x1F379; Dinner & Drinks:</span> Experience beachside vibes at **L'Amore Cafe & Restaurant**.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Day 2 Itinerary Content -->
+                <div id="day2" class="tab-content space-y-6">
+                    <section>
+                        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+                            <span class="text-orange-500">&#x1F697;</span> Day 2: North Goa Adventures
+                        </h2>
+                        <p class="text-gray-500 mt-1 italic">Saturday, 14th September</p>
+                        
+                        <div class="mt-4 space-y-4">
+                            <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
+                                <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F3D5;</span> Morning</h3>
+                                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                                    <li><span class="itinerary-label">&#x1F697; Travel:</span> Hire a tempo traveller or two SUVs for the day.</li>
+                                    <li><span class="itinerary-label">&#x1F3F0; Visit:</span> Explore the historic **Fort Aguada** for stunning sea views.</li>
+                                </ul>
+                            </div>
+                            <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
+                                <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F3AE;</span> Afternoon</h3>
+                                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                                    <li><span class="itinerary-label">&#x1F9C8; Lunch:</span> Head to Vagator for lunch at the popular **Thalassa** (reservations are highly recommended).</li>
+                                    <li><span class="itinerary-label">&#x1F6CD;&#xFE0F; Shopping:</span> As markets are closed, explore local boutiques in the Candolim-Calangute area.</li>
+                                </ul>
+                            </div>
+                            <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
+                                <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F307;</span> Evening</h3>
+                                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                                    <li><span class="itinerary-label">&#x1F305; Sunset:</span> Watch the sunset from the iconic **Chapora Fort**.</li>
+                                    <li><span class="itinerary-label">&#x1F374; Dinner:</span> Enjoy dinner at one of the vibrant restaurants in Vagator or Anjuna.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Day 3 Itinerary Content -->
+                <div id="day3" class="tab-content space-y-6">
+                    <section>
+                        <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+                            <span class="text-orange-500">&#x1F305;</span> Day 3: Leisure & Departure
+                        </h2>
+                        <p class="text-gray-500 mt-1 italic">Sunday, 15th September</p>
+                        
+                        <div class="mt-4 space-y-4">
+                            <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
+                                <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x26F1;</span> Morning</h3>
+                                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                                    <li><span class="itinerary-label">&#x1F3CA; Relax:</span> Spend your final hours by the pool or on Candolim Beach.</li>
+                                    <li><span class="itinerary-label">&#x1F54C; Optional:</span> Visit the churches in Old Goa for a cultural experience.</li>
+                                </ul>
+                            </div>
+                            <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 transition-transform duration-200">
+                                <h3 class="font-semibold text-lg text-gray-700 flex items-center gap-2"><span class="text-2xl">&#x1F3C4;</span> Lunch & Departure</h3>
+                                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                                    <li><span class="itinerary-label">&#x1F372; Lunch:</span> Have a final meal at **Infantaria Cafe** in Calangute.</li>
+                                    <li><span class="itinerary-label">&#x1F697; Airport Transfer:</span> Depart for Manohar International Airport (GOX) for your flights home.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Further Details Section -->
+            <section class="mt-10">
+                <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-3">
+                    <span class="text-orange-500">&#x1F4E9;</span> Further Details
+                </h2>
+                <div class="itinerary-card bg-white p-5 rounded-xl shadow-md border-l-4 border-orange-500 mt-4">
+                    <p class="text-gray-600">For further details regarding the trip, please reach out to the Pegasus group members.</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-6 sm:p-8 text-center text-sm mt-8">
+            <p>&copy; 2025 Goa Trip Planner. Have a safe journey!</p>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript function to handle the tab switching
+        function openTab(event, tabId) {
+            // Get all tab content elements
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            // Hide all tab content
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Get all tab button elements
+            const tabButtons = document.querySelectorAll('.tab-button');
+
+            // Remove 'active' class from all buttons
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show the specific tab content and add 'active' class to the button
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
