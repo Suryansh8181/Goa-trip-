@@ -86,25 +86,25 @@
             <!-- Countdown Timer -->
             <div id="countdown" class="bg-blue-50 text-center p-4 rounded-xl shadow-md mb-8">
                 <h3 class="text-xl font-bold text-blue-800 countdown-title">Goa in...</h3>
-                <div class="flex justify-center items-center mt-2 space-x-4 text-blue-600 font-bold text-2xl sm:text-3xl">
+                <div class="flex justify-center items-center mt-2 space-x-2 sm:space-x-4 text-blue-600 font-bold text-xl sm:text-3xl">
                     <div class="flex flex-col items-center">
-                        <span id="days">00</span>
-                        <span class="text-sm font-normal text-blue-500">Days</span>
+                        <span id="days" class="text-2xl sm:text-3xl">00</span>
+                        <span class="text-xs sm:text-sm font-normal text-blue-500">Days</span>
                     </div>
                     <span class="text-blue-500">:</span>
                     <div class="flex flex-col items-center">
-                        <span id="hours">00</span>
-                        <span class="text-sm font-normal text-blue-500">Hours</span>
+                        <span id="hours" class="text-2xl sm:text-3xl">00</span>
+                        <span class="text-xs sm:text-sm font-normal text-blue-500">Hours</span>
                     </div>
                     <span class="text-blue-500">:</span>
                     <div class="flex flex-col items-center">
-                        <span id="minutes">00</span>
-                        <span class="text-sm font-normal text-blue-500">Minutes</span>
+                        <span id="minutes" class="text-2xl sm:text-3xl">00</span>
+                        <span class="text-xs sm:text-sm font-normal text-blue-500">Minutes</span>
                     </div>
                     <span class="text-blue-500">:</span>
                     <div class="flex flex-col items-center">
-                        <span id="seconds">00</span>
-                        <span class="text-sm font-normal text-blue-500">Seconds</span>
+                        <span id="seconds" class="text-2xl sm:text-3xl">00</span>
+                        <span class="text-xs sm:text-sm font-normal text-blue-500">Seconds</span>
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@
             </div>
 
             <!-- Tab Buttons with a sandy-colored background -->
-            <div role="tablist" class="flex justify-center border-b-2 border-gray-200 bg-orange-50 rounded-t-xl">
+            <div role="tablist" class="flex justify-center border-b-2 border-gray-200 bg-orange-50 rounded-t-xl overflow-x-auto">
                 <button role="tab" class="tab-button active flex-1 py-4 px-2 text-center text-gray-600 hover:bg-orange-100 rounded-t-xl focus:outline-none" onclick="openTab(event, 'day1')">
                     Day 1 <span class="hidden sm:inline">| Sat 13</span>
                 </button>
